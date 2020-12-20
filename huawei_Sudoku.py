@@ -10,6 +10,14 @@
 import copy
 
 
+def transpose_mat(mat):
+    mat_T = [[0] * 9 for i in range(9)]
+    for i in range(9):
+        for j in range(9):
+            mat_T[i][j] = mat[j][i]
+    return mat_T
+
+
 def check_valid(mat):
     for i in range(9):
         if set(mat[i]) == NUMS2:
@@ -68,5 +76,5 @@ NUMS = set(list(range(10)))
 NUMS2 = set(list(range(1, 10)))
 matrix = [list(map(int, input().split())) for _ in range(9)]
 matrix_copy = copy.deepcopy(matrix)
-res = filling_sudoku(matrix, matrix_copy)
-print(matrix)
+filling_sudoku(matrix, matrix_copy)
+
